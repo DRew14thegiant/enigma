@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Énigme de Mathématiques</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Énigme de Mathématiques</h1>
+        <p>Si un triangle a un angle droit et un autre angle de 45°, combien mesure le troisième angle ?</p>
+        <form id="mathRiddleForm">
+            <input type="text" id="answer" placeholder="Votre réponse ici">
+            <button type="submit">Valider</button>
+        </form>
+        <p id="message"></p>
+    </div>
+    <script>
+        document.getElementById('mathRiddleForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var answer = document.getElementById('answer').value.trim();
+            if (answer === '45' || answer === '45°') {
+                window.location.href = 'enigme-svt.html';
+            } else {
+                document.getElementById('message').textContent = 'Mauvaise réponse, essayez encore.';
+            }
+        });
+    </script>
+</body>
+</html>

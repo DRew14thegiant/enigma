@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Énigme d'Histoire</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Énigme d'Histoire</h1>
+        <p>Qui était le premier président de la République française ?</p>
+        <form id="historyRiddleForm">
+            <input type="text" id="answer" placeholder="Votre réponse ici">
+            <button type="submit">Valider</button>
+        </form>
+        <p id="message"></p>
+    </div>
+    <script>
+        document.getElementById('historyRiddleForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var answer = document.getElementById('answer').value.trim().toLowerCase();
+            if (answer === 'louis-napoléon bonaparte' || answer === 'napoléon bonaparte') {
+                window.location.href = 'enigme-math.html';
+            } else {
+                document.getElementById('message').textContent = 'Mauvaise réponse, essayez encore.';
+            }
+        });
+    </script>
+</body>
+</html>

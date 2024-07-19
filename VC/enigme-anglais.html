@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Énigme d'Anglais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Énigme d'Anglais</h1>
+        <p>What is the past tense of "go" ?</p>
+        <form id="englishRiddleForm">
+            <input type="text" id="answer" placeholder="Your answer here">
+            <button type="submit">Submit</button>
+        </form>
+        <p id="message"></p>
+    </div>
+    <script>
+        document.getElementById('englishRiddleForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var answer = document.getElementById('answer').value.trim().toLowerCase();
+            if (answer === 'went') {
+                window.location.href = 'enigme-chinois.html';
+            } else {
+                document.getElementById('message').textContent = 'Wrong answer, try again.';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question sur la K-Pop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Question sur la K-Pop</h1>
+        <p>Est-ce que la K-Pop est nulle ?</p>
+        <form id="kpopQuestionForm">
+            <button type="button" onclick="checkAnswer('oui')">Oui</button>
+            <button type="button" onclick="checkAnswer('non')">Non</button>
+        </form>
+        <p id="message"></p>
+    </div>
+    <script>
+        function checkAnswer(answer) {
+            if (answer === 'oui') {
+                window.location.href = 'remerciement.html';
+            } else {
+                document.getElementById('message').textContent = 'Mauvaise réponse, essayez encore.';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Énigme de SVT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Énigme de SVT</h1>
+        <p>Quel est l'organe principal du système circulatoire ?</p>
+        <form id="svtRiddleForm">
+            <input type="text" id="answer" placeholder="Votre réponse ici">
+            <button type="submit">Valider</button>
+        </form>
+        <p id="message"></p>
+    </div>
+    <script>
+        document.getElementById('svtRiddleForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var answer = document.getElementById('answer').value.trim().toLowerCase();
+            if (answer === 'cœur' || answer === 'coeur') {
+                window.location.href = 'question-kpop.html';
+            } else {
+                document.getElementById('message').textContent = 'Mauvaise réponse, essayez encore.';
+            }
+        });
+    </script>
+</body>
+</html>

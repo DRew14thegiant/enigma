@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Énigme de Français</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Énigme de Français</h1>
+        <p>Je suis une lettre. Ajoutée à la fin d’un verbe à l’infinitif, je le transforme en nom. Qui suis-je ?</p>
+        <form id="frenchRiddleForm">
+            <input type="text" id="answer" placeholder="Votre réponse ici">
+            <button type="submit">Valider</button>
+        </form>
+        <p id="message"></p>
+    </div>
+    <script>
+        document.getElementById('frenchRiddleForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var answer = document.getElementById('answer').value.trim().toLowerCase();
+            if (answer === 'r') {
+                window.location.href = 'enigme-histoire.html';
+            } else {
+                document.getElementById('message').textContent = 'Mauvaise réponse, essayez encore.';
+            }
+        });
+    </script>
+</body>
+</html>
